@@ -6,6 +6,23 @@
   <router-view/>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+import cfg from '@/config/index'
+export default defineComponent(
+  {
+    name: 'App',
+    mounted ():void {
+      this.init()
+    },
+    methods: {
+      init ():void {
+        console.log(cfg)
+      }
+    }
+  }
+)
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -13,18 +30,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
